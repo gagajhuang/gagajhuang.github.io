@@ -1,0 +1,109 @@
+@mixin position-center($property)
+  position: $property
+  left: 0
+  right: 0
+
+@mixin flex-center
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+@mixin img-hover
+  transition: 0.5s
+  &:hover
+    transform: scale(0.95)
+
+@mixin btn-hover($color)
+  &:hover
+    background: $color
+
+@mixin border-bottom($color)
+  border-bottom: 1px solid $color
+
+@mixin border-all($color)
+  border: 1px solid $color
+
+@mixin shadow($color)
+  box-shadow: 10px 10px 0px $color
+
+@mixin title($color, $size, $lineH)
+  color: $color
+  font-size: $size
+  line-height: $lineH
+  font-weight: bold
+  text-align: center
+  margin-bottom: 30px
+
+@mixin font-40
+  font-size: 2.5rem
+  line-height: 3rem
+
+@mixin font-35
+  font-size: 2.185rem
+  line-height: 2.8rem
+
+@mixin font-32
+  font-size: 2rem
+  line-height: 2.5rem
+
+@mixin font-28
+  font-size: 1.75rem
+  line-height: 2rem
+
+@mixin font-24
+  font-size: 1.5rem
+  line-height: 2.2rem
+
+@mixin font-22
+  font-size: 1.375rem
+  line-height: 2rem
+
+@mixin font-20
+  font-size: 1.25rem
+  line-height: 1.6rem
+
+@mixin font-18
+  font-size: 1.125rem
+  line-height: 1.6rem
+
+@mixin font-16
+  font-size: 1rem
+  line-height: 1.2rem
+
+@mixin bold-400
+  font-weight: 400
+
+@mixin bold-500
+  font-weight: 500
+
+@mixin bold-600
+  font-weight: 606
+
+@mixin pc-1366 
+  @media (max-width:1366px)
+    @content
+
+@mixin pc-1024
+  @media (max-width:1024px)
+    @content
+
+@mixin pc-960 
+  @media (max-width:960px)
+    @content
+
+@mixin pc-769 
+  @media (max-width:769px)
+    @content
+
+@mixin mobile-640 
+  @media (max-width:640px)
+    @content
+
+@mixin mobile-min-640 
+  @media (min-width:640px)
+    @content
+
+@mixin mobile-480 
+  @media (max-width:480px)
+    @content
+

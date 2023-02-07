@@ -1,0 +1,524 @@
+@import _variables
+@import _mixin
+
+/* 統一樣式 */
+%margin-auto
+  width: 100%
+  margin:0 auto
+%block-top
+  margin-top: 50px
+  +mobile-480
+    margin-top: 30px
+html, body
+  scroll-behavior: smooth
+  color: $text
+
+/* 選單 */
+nav
+  box-sizing: border-box
+  overflow: hidden
+.logo 
+  a
+    max-width: 70px
+.menu
+  position: fixed
+  top: 0
+  left: 0
+  max-width: 250px
+  width: 100%
+  height: 100%
+  background: #fff
+  box-shadow: 2px 0px 10px $color-grey
+  transition: $trans-time
+  padding: 50px 30px 50px 50px
+  z-index: 100
+  +pc-769
+    left: -100%
+  ul
+    margin-top: 50px
+  li
+    display: flex
+    align-items: center
+    & + li
+      margin-top: 10px
+    &::before
+      content: ''
+      display: block
+      width: 5px
+      height: 24px
+      margin-right: 10px
+      background: $primary
+    &:nth-child(2)
+      &::before
+        background: $secondary
+    a 
+      position: relative
+      color: $text
+      +font-22
+      font-family: Arial
+      font-weight: 600 
+      &:hover
+        color: #fff
+        background: $color-grey-dark
+        padding: 0 10px
+  &-close
+    position: absolute
+    top: 10px
+    right: 15px
+    font-size: 24px
+    color: $color-grey
+    cursor: pointer
+    display: none
+    +pc-769
+      display: block
+  &-show
+    left: 0
+    max-width: none
+#menu-btn 
+  position: absolute
+  left: 15px
+  top: 15px
+  cursor: pointer
+  font-size: 30px
+  z-index: 99
+  +pc-769
+    display: block
+.bg
+  &-index
+    background: url('../images/bg-index.jpg') no-repeat right
+    height: 100vh
+    +pc-1024
+      background: url('../images/bg-index-m.jpg') no-repeat right
+  &-content
+    background: url('../images/bg-content.jpg') no-repeat center/cover fixed
+.section__block
+  position: relative
+  max-width: 1224px
+  margin-left: 250px
+  padding: 50px 100px
+  +pc-1366
+    padding: 50px
+  +pc-769
+    margin-left: 0
+    padding: 25px 4%
+.increase-space
+  padding-top: 70px
+
+// 首頁
+.index
+  &-block
+    height: 100vh
+  &-content
+    position: absolute
+    top: 50%
+    transform: translateY(-60%)
+    left: 15%
+    +pc-1024
+      transform: translateY(0)
+      top: 15%
+      left: 10%
+    +pc-769
+      position: relative
+      left:0
+  &-title 
+    h1
+      font-family: Arial
+      font-weight: 900
+      font-size: 90px
+      +pc-1024
+        font-size: 80px
+      +mobile-480
+        font-size: 48px
+    p
+      font-family: Arial
+      display: flex
+      align-items: center
+      font-size: 45px
+      margin-top: 15px
+      padding-left: 8px
+      +pc-1024
+        font-size: 35px
+      +mobile-480
+        font-size: 25px
+      &::before
+        content: ''
+        display: block
+        width: 100px
+        height: 3px
+        margin-right: 10px
+        background: $text
+        +pc-1024
+          width: 80px
+        +mobile-480
+          width: 50px
+  &-icon
+    position: relative
+    display: flex
+    margin-top: 15px
+    padding-left: 8px
+    &-style
+      background: $tertiary
+      border-radius: 50%
+      color: #fff
+      line-height: 46px
+      height: 50px
+      width: 50px
+      font-size: 28px
+      text-align: center
+      cursor: pointer
+      transition: $trans-time
+      &:not(:last-child)
+        margin-right: 10px
+      &:hover
+        background: $color-grey-dark
+        .index-remark
+          opacity: 1
+      a
+        color: #fff
+  &-remark
+    position: absolute
+    bottom: -40px
+    padding: 5px 10px
+    border-radius: 20px
+    color: $text
+    background: $color-grey
+    +font-16
+    letter-spacing: 1px
+    transition: $trans-time
+    opacity: 0
+// 內頁
+h2
+  font-family: Arial
+  font-weight: 900
+  font-size: 90px
+  background: url(../images/img-title.png) no-repeat right bottom
+  display: inline-block
+  padding-right: 10px
+  margin-bottom: 50px
+  &::after
+    content: ''
+    display: block
+    width: 72px
+    height: 3px
+    background: $text
+  +pc-1024
+    font-size: 80px
+  +mobile-480
+    font-size: 48px
+    margin-bottom: 30px
+.intro
+  &-text
+    p
+      +font-18
+      +bold-400
+      letter-spacing: 1px
+      text-align: justify
+      &:not(:last-child)
+        margin-bottom: 10px
+.skill
+  &-block
+    margin-top: 95px
+    padding-right: 30px
+    +flex-center
+    +pc-1024
+      display: block
+    +mobile-480
+      margin-top: 75px
+  &-item
+    position: relative
+    &:not(:last-child)
+      +pc-1024
+        margin-bottom: 70px
+  &-title
+    position: absolute
+    top: -55px
+    right: -22px
+    p
+      +font-22
+      +bold-500
+      padding-left: 2rem
+    img
+      max-width: 150px
+  &-list
+    background: $secondary
+    border-radius: 10px 10px 10px 0
+    padding: 25px 30px
+    display: inline-block
+    +pc-1366
+      padding: 25px 18px
+    +pc-1024
+      display: block
+      padding: 25px 10%
+    +mobile-640
+      padding: 25px 20px
+    li
+      color: #fff
+      letter-spacing: 1px
+      +bold-400
+      &:not(:last-child)
+        margin-bottom: 10px
+      &::before
+        font: var(--fa-font-solid)
+        content: "\f35a"
+        margin-right: 10px
+.two-columns
+  +flex-center
+  align-items: flex-start
+  +mobile-640
+    display: block
+  ul + ul
+    margin-left: 30px
+    +mobile-640
+      margin-left: 0
+      margin-top: 10px
+h3
+  background: url(../images/img-h3.png) no-repeat left center/contain
+  display: inline-block
+  font-size: 30px
+  padding-left: 12px
+  line-height: 45px
+  +bold-600
+  display: flex
+  align-items: center
+  margin-bottom: 30px
+  &::after
+    font: var(--fa-font-solid)
+    content: "\f101"
+    font-size: 24px
+    padding-left: 5px
+.company
+  &-block
+    min-height: 810px
+  &-content
+    position: relative
+    margin-top: 315px
+    +pc-1024
+      margin-top: 80px
+    +mobile-480
+      margin-top: 60px
+  &-time
+    max-width: 920px
+    +pc-1024
+      display: none
+    &-m
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      top: -30px
+      background: url(../images/img-time-m.png) no-repeat center
+      +font-24
+      font-family: Arial
+      font-weight: 800 
+      color: $tertiary
+      width: 95px
+      height: 50px
+      padding-top: 2px
+      text-align: center
+      display: none
+      +pc-1024
+        display: block
+  &-item
+    position: absolute
+    width: 45%
+    & + .company-item
+      +pc-1024
+        margin-top: 50px
+    +pc-1024
+      position: relative
+      width: 100%
+    img
+      max-width: 8px
+      margin: 0
+      margin-left: 23%
+      +pc-1024
+        display: none
+  &-one
+    top: 80%
+  &-two
+    bottom: 80%
+    left: 7%
+    +pc-1024
+      left: 0
+    img
+      transform: rotate(180deg)
+      margin-left: 60%
+  &-three
+    top: 80%
+    left: 48%
+    +pc-1024
+      left: 0
+  &-four
+    bottom: 80%
+    left: 55%
+    +pc-1024
+      left: 0
+    img
+      transform: rotate(180deg)
+      margin-left: 60%
+  &-text
+    border: 2px solid $tertiary
+    border-radius: 10px
+    padding: 20px
+  &-name
+    position: relative
+    display: inline-block
+    z-index: 1
+    +font-18
+    +bold-400
+    margin-bottom: 10px
+    letter-spacing: 1px
+    &::before
+      content: ""
+      background: $primary
+      height: 6px
+      width: 95%
+      display: block
+      position: absolute
+      bottom: 2px
+      z-index: -1
+  &-things
+    display: block
+    letter-spacing: 1px
+    text-align: justify
+    +font-16
+    & + .company-things
+      margin-top: 5px
+  &-case
+    margin-top: 5px
+    li
+      +font-16
+      text-indent: -1.3rem
+      margin-left: 1.3rem
+      & + li
+        margin-top: 0.2rem
+      &::before
+        font: var(--fa-font-solid)
+        content: "\f0a9"
+        margin-right: 5px
+// 作品區
+.case
+  &-web
+    &-show
+      +flex-center
+      margin-bottom: 50px
+      +pc-1024
+        display: block
+    &-item
+      position: relative
+      max-width: 300px
+      @extend %margin-auto
+      +shadow($primary)
+      cursor: pointer
+      &:hover
+        .case-web-text
+          opacity: 1
+      &:not(:last-child)
+        margin-right: 35px
+        +pc-1024
+          margin-right: auto
+          margin-bottom: 25px
+    &-text
+      position: absolute
+      color: #fff
+      background: rgba(0, 0, 0, 0.8)
+      width: 100%
+      height: 100%
+      text-align: center
+      transition: all $trans-time
+      opacity: 0
+      p
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        margin: 0 auto
+        left: 0
+        right: 0
+        +font-18
+        letter-spacing: 1px
+        span
+          display: block
+  &-list
+    padding-left: 1rem
+    &-project
+      &:not(:last-child)
+        margin-bottom: 10px
+      p
+        +font-18
+        +bold-400
+        display: flex
+        align-items: center
+        color: $text
+        letter-spacing: 1px
+        &::before
+          display: block
+          content: ''
+          width: 8px
+          height: 8px
+          background: $text
+          margin-right: 5px
+      a:hover
+        p
+          color: $tertiary
+      span
+        display: block
+        margin-left: 13px
+        letter-spacing: 1px
+        text-align: justify
+        +font-16
+        & + span
+          margin-top: 5px
+      ul
+        margin-left: 2.2rem
+        li
+          +font-16
+          list-style: circle
+          letter-spacing: 1px
+          // display: flex
+          // align-items: flex-start
+          // &::before
+          //   display: block
+          //   content: ''
+          //   min-width: 8px
+          //   height: 8px
+          //   +border-all($text)
+          //   border-radius: 50%
+          //   margin: 5px 5px 0 0
+          a
+            display: inline
+          a + a
+            &::before
+              font: var(--fa-font-solid)
+              content: "\f30b" 
+              margin: 0 5px
+              color: $text
+  &-design
+    // max-width: 500px
+    padding-left: 1rem
+    display: grid
+    display: -ms-flexbox
+    -ms-flex-wrap: wrap
+    justify-content: flex-start
+    grid-template-columns: repeat(auto-fill, 400px)
+    grid-gap: 40px
+    +pc-960
+      justify-content: center
+    +mobile-480
+      display: block
+      padding: 0 15px
+    div
+      +shadow($primary)
+      & + div
+        +mobile-480
+          margin-top: 30px
+.btn-click
+  +border-all($text)
+  padding: 5px 10px
+  margin: 30px 0 0 1rem
+  display: block
+  +pc-960
+    margin: 30px auto 0 auto
+  a
+    +bold-400
+    color: $text
+  &:hover
+    background: $color-grey
