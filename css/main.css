@@ -111,7 +111,7 @@ nav {
 }
 @media (max-width: 1024px) {
   .bg-index {
-    background: url("../images/bg-index-m.jpg") no-repeat right;
+    background: url("../images/bg-index-m.jpg") no-repeat right/cover;
   }
 }
 .bg-content {
@@ -639,7 +639,7 @@ h3::after {
   font-weight: 400;
   display: flex;
   align-items: center;
-  color: #1b1b1b;
+  color: #2c67ae;
   letter-spacing: 1px;
 }
 .case-list-project p::before {
@@ -649,6 +649,13 @@ h3::after {
   height: 8px;
   background: #1b1b1b;
   margin-right: 5px;
+}
+.case-list-project p::after {
+  font: var(--fa-font-solid);
+  content: "";
+  font-size: 13px;
+  margin-left: 5px;
+  padding-top: 2px;
 }
 .case-list-project a:hover p {
   color: #5d677b;

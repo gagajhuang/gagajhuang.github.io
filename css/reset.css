@@ -61,14 +61,14 @@ table {
 	border-spacing: 0;
 }
 a{
-	color: #2c67ae;
+	color: #a80a0a;
 	outline:none;
 	text-decoration: none;
 	display: block;
 	/*font-weight: 300;*/
 }
 a:hover{
-	color: #0948a3;
+	color: #d40f0f;
 	/* color: inherit; */
 	text-decoration: none;
 	transition: 0.5s;

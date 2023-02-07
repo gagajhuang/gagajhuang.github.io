@@ -88,7 +88,7 @@ nav
     background: url('../images/bg-index.jpg') no-repeat right
     height: 100vh
     +pc-1024
-      background: url('../images/bg-index-m.jpg') no-repeat right
+      background: url('../images/bg-index-m.jpg') no-repeat right/cover
   &-content
     background: url('../images/bg-content.jpg') no-repeat center/cover fixed
 .section__block
@@ -448,7 +448,7 @@ h3
         +bold-400
         display: flex
         align-items: center
-        color: $text
+        color: #2c67ae
         letter-spacing: 1px
         &::before
           display: block
@@ -457,6 +457,12 @@ h3
           height: 8px
           background: $text
           margin-right: 5px
+        &::after
+          font: var(--fa-font-solid)
+          content: "\f35d"
+          font-size: 13px
+          margin-left: 5px
+          padding-top: 2px 
       a:hover
         p
           color: $tertiary
