@@ -296,6 +296,11 @@ h2::after {
 .intro-text p:not(:last-child) {
   margin-bottom: 10px;
 }
+.intro-text a {
+  color: #8693ac;
+  display: inline;
+  font-weight: 400;
+}
 
 .skill-block {
   margin-top: 95px;
