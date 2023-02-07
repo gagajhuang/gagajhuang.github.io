@@ -737,4 +737,11 @@ h3::after {
   background: #bbbbbb;
 }
 
+.no-href p {
+  color: #1b1b1b;
+}
+.no-href p::after {
+  content: "";
+}
+
 /*# sourceMappingURL=main.css.map */
