@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+/*@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);*/
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700,800&display=swap');
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -27,7 +28,7 @@ input,label,select,textarea {
 	/* font-family: "Microsoft JhengHei","Source Sans Pro", sans-serif,'Noto Sans TC'; */
 	font-family: 'Noto Sans TC',"Microsoft JhengHei","Source Sans Pro", sans-serif;
 	font-weight: 300;
-	/* font-weight:normal; */
+	font-weight:normal;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -44,9 +45,6 @@ ol, ul {
 	margin-inline-start: 0px;
 	margin-inline-end: 0px;
 	padding-inline-start: 0;
-}
-li {
-	text-align: justify;
 }
 blockquote, q {
 	quotes: none;
@@ -68,7 +66,7 @@ a{
 	/*font-weight: 300;*/
 }
 a:hover{
-	color: #0948a3;
+	color: #333333;
 	/* color: inherit; */
 	text-decoration: none;
 	transition: 0.5s;
@@ -78,6 +76,7 @@ img{
 	width: 100%;
 	margin: 0 auto;
 }
+
 
 /* Remove the stupid outer glow in Webkit */
 input:focus {
@@ -129,6 +128,9 @@ input[type="week"] {
 
 /* Button Controls
 -----------------------------------------------*/
+button{
+	background: transparent;
+}
 
 input[type="checkbox"],
 input[type="radio"] {

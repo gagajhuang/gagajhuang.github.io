@@ -5,520 +5,601 @@
 %margin-auto
   width: 100%
   margin:0 auto
-%block-top
-  margin-top: 50px
-  +mobile-480
-    margin-top: 30px
+%content-sWith
+  max-width: 1000px
+  @extend %margin-auto 
+%text-intro
+  +font-bold
+  +font-24
+  text-align: center
+  letter-spacing: 0.5px
 html, body
   scroll-behavior: smooth
-  color: $text
-
+  color: #1e1e1e
 /* 選單 */
+header
+  +position-center(fixed)
+  top: 0
+  z-index: 9999
 nav
+  +flex-center
+  width: 100%
+  padding: 0 50px
   box-sizing: border-box
   overflow: hidden
-.logo 
-  a
-    max-width: 70px
-.menu
-  position: fixed
-  top: 0
-  left: 0
-  max-width: 250px
-  width: 100%
-  height: 100%
   background: #fff
-  box-shadow: 2px 0px 10px $color-grey
-  transition: $trans-time
-  padding: 50px 30px 50px 50px
-  z-index: 100
-  +pc-769
-    left: -100%
-  ul
-    margin-top: 50px
-  li
-    display: flex
-    align-items: center
-    & + li
-      margin-top: 10px
-    &::before
-      content: ''
-      display: block
-      width: 5px
-      height: 24px
-      margin-right: 10px
-      background: $primary
-    &:nth-child(2)
-      &::before
-        background: $secondary
-    a 
-      position: relative
-      color: $text
-      +font-22
-      font-family: Arial
-      font-weight: 600 
-      &:hover
-        color: #fff
-        background: $color-grey-dark
-        padding: 0 10px
-  &-close
-    position: absolute
-    top: 10px
-    right: 15px
-    font-size: 24px
-    color: $color-grey
-    cursor: pointer
-    display: none
-    +pc-769
-      display: block
-  &-show
-    left: 0
-    max-width: none
+  height: 70px
+  +pc-960 
+    padding: 0 15px
+.logo 
+  +flex-center
+//   a
+//     max-width: 130px
+.fa
+  padding: 0 5px
 #menu-btn 
-  position: absolute
-  left: 15px
-  top: 15px
+  display: none
   cursor: pointer
-  font-size: 30px
-  z-index: 99
-  +pc-769
+  i
+    +font-22
+    color: $color-purple
+  +pc-960
     display: block
-.bg
-  &-index
-    background: url('../images/bg-index.jpg') no-repeat right
-    height: 100vh
-    +pc-1024
-      background: url('../images/bg-index-m.jpg') no-repeat right
-  &-content
-    background: url('../images/bg-content.jpg') no-repeat center/cover fixed
-.section__block
-  position: relative
-  max-width: 1224px
-  margin-left: 250px
-  padding: 50px 100px
-  +pc-1366
-    padding: 50px
-  +pc-769
-    margin-left: 0
-    padding: 25px 4%
-.increase-space
-  padding-top: 70px
-
-// 首頁
-.index
-  &-block
-    height: 100vh
-  &-content
-    position: absolute
-    top: 50%
-    transform: translateY(-60%)
-    left: 15%
-    +pc-1024
-      transform: translateY(0)
-      top: 15%
-      left: 10%
-    +pc-769
-      position: relative
-      left:0
-  &-title 
-    h1
-      font-family: Arial
-      font-weight: 900
-      font-size: 90px
-      +pc-1024
-        font-size: 80px
-      +mobile-480
-        font-size: 48px
-    p
-      font-family: Arial
+.menu 
+  +pc-960 
+    +position-center(absolute)
+    max-height: 0px
+    overflow: hidden
+    transition: all 1s
+    top: 70px
+    z-index: 100
+    background: #fff
+    text-align: center
+    &-show
+      max-height: 1000px
+  ul 
+    li
+      float: left
       display: flex
       align-items: center
-      font-size: 45px
-      margin-top: 15px
-      padding-left: 8px
-      +pc-1024
-        font-size: 35px
-      +mobile-480
-        font-size: 25px
-      &::before
-        content: ''
+      &:not(:last-child)
+        &::after
+          display: block
+          content: " "
+          height: 15px
+          width: 1px
+          background: $color-purple
+      +pc-960 
+        float: none
         display: block
-        width: 100px
-        height: 3px
-        margin-right: 10px
-        background: $text
-        +pc-1024
-          width: 80px
-        +mobile-480
-          width: 50px
-  &-icon
-    position: relative
-    display: flex
-    margin-top: 15px
-    padding-left: 8px
-    &-style
-      background: $tertiary
-      border-radius: 50%
-      color: #fff
-      line-height: 46px
-      height: 50px
-      width: 50px
-      font-size: 28px
-      text-align: center
-      cursor: pointer
-      transition: $trans-time
-      &:not(:last-child)
-        margin-right: 10px
-      &:hover
-        background: $color-grey-dark
-        .index-remark
-          opacity: 1
-      a
-        color: #fff
-  &-remark
-    position: absolute
-    bottom: -40px
-    padding: 5px 10px
-    border-radius: 20px
-    color: $text
-    background: $color-grey
-    +font-16
-    letter-spacing: 1px
-    transition: $trans-time
-    opacity: 0
-// 內頁
-h2
-  font-family: Arial
-  font-weight: 900
-  font-size: 90px
-  background: url(../images/img-title.png) no-repeat right bottom
-  display: inline-block
-  padding-right: 10px
-  margin-bottom: 50px
-  &::after
-    content: ''
-    display: block
-    width: 72px
-    height: 3px
-    background: $text
-  +pc-1024
-    font-size: 80px
-  +mobile-480
-    font-size: 48px
-    margin-bottom: 30px
-.intro
-  &-text
-    p
-      +font-18
-      +bold-400
-      letter-spacing: 1px
-      text-align: justify
-      &:not(:last-child)
-        margin-bottom: 10px
-.skill
-  &-block
-    margin-top: 95px
-    padding-right: 30px
-    +flex-center
-    +pc-1024
-      display: block
+        &:not(:last-child)
+          &::after
+            height: 1px
+            width: 100%
+  a 
+    padding: 0px 18px
+    color: $color-purple
+    +font-20
+    letter-spacing: 0.5rem
+    +pc-960
+      line-height: 50px
+    // &:hover 
+    //   color: $tertiary
+main 
+  overflow: hidden
+  display: block
+section
+  position: relative
+.section
+  &__block
+    @extend %margin-auto
+    max-width: 1300px
+    padding: 70px 10px 130px 10px
     +mobile-480
-      margin-top: 75px
-  &-item
-    position: relative
-    &:not(:last-child)
-      +pc-1024
-        margin-bottom: 70px
-  &-title
-    position: absolute
-    top: -55px
-    right: -22px
-    p
-      +font-22
-      +bold-500
-      padding-left: 2rem
-    img
-      max-width: 150px
-  &-list
-    background: $secondary
-    border-radius: 10px 10px 10px 0
-    padding: 25px 30px
-    display: inline-block
-    +pc-1366
-      padding: 25px 18px
-    +pc-1024
+      padding: 30px 3% 50px 3%
+// 主視覺動畫
+.banner__block
+  // background: url('../images/bg-banner.jpg') no-repeat center top/cover
+  // height: 950px
+  margin-top: 70px 
+  position: relative
+
+.kv
+  &-banner
+    +mobile-640
+      display: none
+  &-banner-m
+    display: none
+    +mobile-640
       display: block
-      padding: 25px 10%
+  &-pic
+    position: absolute
+    z-index: 2
+    overflow: hidden
+  &-title
+    width: 35%
+    left: 30%
+    top: 38%
     +mobile-640
-      padding: 25px 20px
-    li
-      color: #fff
-      letter-spacing: 1px
-      +bold-400
-      &:not(:last-child)
-        margin-bottom: 10px
-      &::before
-        font: var(--fa-font-solid)
-        content: "\f35a"
-        margin-right: 10px
-.two-columns
-  +flex-center
-  align-items: flex-start
+      width: 51%
+      left: 23.8%
+      top: 34.5%
+  &-witch
+    z-index: 3
+    width: 2%
+    right: 28%
+    top: 5%
+    animation: witch-fly 3s forwards cubic-bezier(0.55, 0.09, 0.68, 0.53)
+  &-ship
+    width: 12%
+    // right: 5%
+    // top: 32%
+    opacity: 0
+    animation: ship-act forwards 1.5s
+    +mobile-640
+      width: 27%
+      animation: ship-act-m forwards 1.5s
+  &-airplane
+    width: 13%
+    left: 30%
+    top: 7%
+    animation: airplane-act infinite 2s
+    +mobile-640
+      width: 28%
+      left: 36%
+      top: 9%
+      animation: airplane-act-m infinite 2s
+  &-train
+    width: 15%
+    // left: 15%
+    // top: 46%
+    opacity: 0
+    animation: train-act forwards 1.5s 4s
+    +mobile-640
+      width: 23%
+      animation: train-act-m forwards 1.5s 4s
+  &-palace
+    width: 16.5%
+    left: 26%
+    top: 64%
+    +mobile-640
+      width: 23%
+      left: 24%
+      top: 54.5%
+  &-noodle
+    width: 11%
+    left: 44%
+    top: 67%
+    +mobile-640
+      width: 13%
+      top: 57%
+      right: 34.5%
+      left: auto
+  &-garden01
+    width: 13%
+    right: 26%
+    top: 26%
+    +mobile-640
+      width: 21%
+      right: 9%
+      top: 28.5%
+  &-naoshima
+    width: 10%
+    right: 41.2%
+    top: 8%
+    +mobile-640
+      width: 11%
+      right: auto
+      top: 1.8%
+      left: 33.2%
+  &-shodoshima
+    width: 10.5%
+    right: 19.6%
+    top: 3%
+    +mobile-640
+      width: 17%
+      right: 24.2%
+      top: 1.5%
+  &-cat
+    width: 3%
+    right: 34.1%
+    top: 17.5%
+    +mobile-640
+      width: 5.8%
+      right: 26%
+      top: 23.8%
+  &-arugame
+    width: 12%
+    left: 30.3%
+    top: 25.5%
+    +mobile-640
+      width: 23%
+      left: 12%
+      top: 24.5%
+@keyframes witch-fly
+  0%
+    right: 28%
+    top: 5%
+  70%
+    width: 13%
+    right: 40%
+    top: 43%
+  90%
+    opacity: 1
+  100%
+    width: 13%
+    right: 40%
+    top: 43%
+    opacity: 0
+@keyframes ship-act
+  0%
+    width: 10%
+    right: 2%
+    top: 30%
+    opacity: 0
+  100%
+    right: 5%
+    top: 32%
+    opacity: 1
+@keyframes ship-act-m
+  0%
+    width: 20%
+    right: -2%
+    top: 60%
+    opacity: 0
+  100%
+    right: -1.8%
+    top: 61.8%
+    opacity: 1
+    
+@keyframes airplane-act
+  0%
+    left: 30%
+    top: 7%
+  50%
+    left: 30%
+    top: 5%
+  100%
+    left: 30%
+    top: 7%
+@keyframes airplane-act-m
+  0%
+    left: 36%
+    top: 9%
+  50%
+    left: 36%
+    top: 7%
+  100%
+    left: 36%
+    top: 9%   
+@keyframes train-act
+  0%
+    left: 18%
+    top: 44%
+    opacity: 0
+  100%
+    left: 15%
+    top: 46%
+    opacity: 1
+@keyframes train-act-m
+  0%
+    left: 18%
+    bottom: 45%
+    opacity: 0
+  100%
+    left: 2.6%
+    bottom: 41.5%
+    opacity: 1
+// 介紹
+#bg-intro
+  background: url('../images/bg-intro.jpg') no-repeat center/cover
+.dividing-line
+  position: absolute
+  top: -25px
+  +pc-960
+    top: -15px
   +mobile-640
+    top: -10px
+  // width: 100%
+  // height: 60px
+  // background: url('../images/dividing-01.png') no-repeat center
+.title, .title2
+  max-width: 320px
+  @extend %margin-auto 
+  margin-bottom: 40px
+  +mobile-480
+    max-width: 250px
+.title2
+  max-width: 660px
+.bg-map
+  background: url("../images/bg-map.png") no-repeat right -30px
+  +mobile-640
+    background: transparent
+.about,.flight
+  @extend %content-sWith
+  span
     display: block
-  ul + ul
-    margin-left: 30px
-    +mobile-640
-      margin-left: 0
-      margin-top: 10px
-h3
-  background: url(../images/img-h3.png) no-repeat left center/contain
-  display: inline-block
-  font-size: 30px
-  padding-left: 12px
-  line-height: 45px
-  +bold-600
-  display: flex
-  align-items: center
-  margin-bottom: 30px
-  &::after
-    font: var(--fa-font-solid)
-    content: "\f101"
-    font-size: 24px
-    padding-left: 5px
-.company
-  &-block
-    min-height: 810px
+    @extend %text-intro
+    +mobile-480
+      text-align: justify
+      +font-20
+    & + span
+      margin-top: 1.5rem
+.flight
+  padding-top: 100px
+  +mobile-480
+    padding-top: 50px
+.img-flight
+  margin-top: -40px
+  img
+    &:nth-child(2)
+      display: none
+    +mobile-480
+      &:nth-child(1)
+        display: none
+      &:nth-child(2)
+        display: block
+#bg-content
+  background: url('../images/bg-content.jpg') repeat-y top/contain
+.bg-gift
+  background: url('../images/bg-gift.png') no-repeat center/cover
+  padding: 170px 0 120px 0
+  +pc-960
+    background: #deeeec
+    padding: 50px 10px 120px
+.gift
+  &-text
+    @extend %content-sWith
+    @extend %text-intro
+    +font-30
+    margin-bottom: 40px
+    +pc-960
+      +font-24
+      text-align: justify
+    span
+      display: block
+      @extend %text-intro
+      +font-30
+      +pc-960
+        display: inline
+        +font-24
+        text-align: justify
   &-content
     position: relative
-    margin-top: 315px
-    +pc-1024
-      margin-top: 80px
-    +mobile-480
-      margin-top: 60px
-  &-time
-    max-width: 920px
-    +pc-1024
-      display: none
-    &-m
-      position: absolute
-      left: 50%
-      transform: translateX(-50%)
-      top: -30px
-      background: url(../images/img-time-m.png) no-repeat center
-      +font-24
-      font-family: Arial
-      font-weight: 800 
-      color: $tertiary
-      width: 95px
-      height: 50px
-      padding-top: 2px
-      text-align: center
-      display: none
-      +pc-1024
-        display: block
-  &-item
-    position: absolute
-    width: 45%
-    & + .company-item
-      +pc-1024
-        margin-top: 50px
-    +pc-1024
-      position: relative
-      width: 100%
-    img
-      max-width: 8px
-      margin: 0
-      margin-left: 23%
-      +pc-1024
-        display: none
-  &-one
-    top: 80%
-  &-two
-    bottom: 80%
-    left: 7%
-    +pc-1024
-      left: 0
-    img
-      transform: rotate(180deg)
-      margin-left: 60%
-  &-three
-    top: 80%
-    left: 48%
-    +pc-1024
-      left: 0
-  &-four
-    bottom: 80%
-    left: 55%
-    +pc-1024
-      left: 0
-    img
-      transform: rotate(180deg)
-      margin-left: 60%
-  &-text
-    border: 2px solid $tertiary
-    border-radius: 10px
-    padding: 20px
-  &-name
-    position: relative
-    display: inline-block
-    z-index: 1
-    +font-18
-    +bold-400
-    margin-bottom: 10px
-    letter-spacing: 1px
-    &::before
-      content: ""
-      background: $primary
-      height: 6px
-      width: 95%
-      display: block
-      position: absolute
-      bottom: 2px
-      z-index: -1
-  &-things
-    display: block
-    letter-spacing: 1px
+    @extend %content-sWith
+  &-activity
+    +font-24
+    color: $color-gray
     text-align: justify
-    +font-16
-    & + .company-things
-      margin-top: 5px
-  &-case
-    margin-top: 5px
-    li
-      +font-16
-      text-indent: -1.3rem
-      margin-left: 1.3rem
-      & + li
-        margin-top: 0.2rem
-      &::before
-        font: var(--fa-font-solid)
-        content: "\f0a9"
-        margin-right: 5px
-// 作品區
-.case
-  &-web
-    &-show
-      +flex-center
-      margin-bottom: 50px
-      +pc-1024
-        display: block
-    &-item
-      position: relative
-      max-width: 300px
-      @extend %margin-auto
-      +shadow($primary)
-      cursor: pointer
-      &:hover
-        .case-web-text
-          opacity: 1
-      &:not(:last-child)
-        margin-right: 35px
-        +pc-1024
-          margin-right: auto
-          margin-bottom: 25px
-    &-text
-      position: absolute
-      color: #fff
-      background: rgba(0, 0, 0, 0.8)
-      width: 100%
-      height: 100%
-      text-align: center
-      transition: all $trans-time
-      opacity: 0
-      p
-        position: absolute
-        top: 50%
-        transform: translateY(-50%)
-        margin: 0 auto
-        left: 0
-        right: 0
-        +font-18
-        letter-spacing: 1px
-        span
-          display: block
-  &-list
-    padding-left: 1rem
-    &-project
-      &:not(:last-child)
-        margin-bottom: 10px
-      p
-        +font-18
-        +bold-400
-        display: flex
-        align-items: center
-        color: $text
-        letter-spacing: 1px
-        &::before
-          display: block
-          content: ''
-          width: 8px
-          height: 8px
-          background: $text
-          margin-right: 5px
-      a:hover
-        p
-          color: $tertiary
-      span
-        display: block
-        margin-left: 13px
-        letter-spacing: 1px
-        text-align: justify
-        +font-16
-        & + span
-          margin-top: 5px
-      ul
-        margin-left: 2.2rem
-        li
-          +font-16
-          list-style: circle
-          letter-spacing: 1px
-          // display: flex
-          // align-items: flex-start
-          // &::before
-          //   display: block
-          //   content: ''
-          //   min-width: 8px
-          //   height: 8px
-          //   +border-all($text)
-          //   border-radius: 50%
-          //   margin: 5px 5px 0 0
-          a
-            display: inline
-          a + a
-            &::before
-              font: var(--fa-font-solid)
-              content: "\f30b" 
-              margin: 0 5px
-              color: $text
-  &-design
-    // max-width: 500px
-    padding-left: 1rem
-    display: grid
-    display: -ms-flexbox
-    -ms-flex-wrap: wrap
-    justify-content: flex-start
-    grid-template-columns: repeat(auto-fill, 400px)
-    grid-gap: 40px
-    +pc-960
-      justify-content: center
+    a
+      display: inline
     +mobile-480
-      display: block
-      padding: 0 15px
-    div
-      +shadow($primary)
-      & + div
-        +mobile-480
-          margin-top: 30px
-.btn-click
-  +border-all($text)
-  padding: 5px 10px
-  margin: 30px 0 0 1rem
-  display: block
+      +font-20
+  &-btn
+    @extend %margin-auto
+    text-align: center
+    button
+      +img-hover
+  &-ship
+    position: absolute
+    max-width: 46%
+    right: -150px
+    bottom: -190px
+    +pc-960
+      max-width: 320px
+      right: 0
+      left: 0
+      bottom: -200px
+    +mobile-480
+      max-width: 250px
+      bottom: -150px
+.coupon
+  +flex-center
+  +font-24
+  margin: 50px auto 50px
+  max-width: 800px
+  @extend %margin-auto 
   +pc-960
-    margin: 30px auto 0 auto
-  a
-    +bold-400
-    color: $text
+    display: block
+    text-align: center
+  &-text
+    +pc-960
+      display: inline-block
+      margin-bottom: 30px
+    .remark
+      display: block
+      +font-16
+      margin-top: 10px
+      +mobile-480
+        text-align: left
+        text-indent: -1.2rem
+        padding-left: 1.2rem
+  &-title
+    background: $color-blue
+    border-radius: 50px
+    color: #fff
+    display: inline-block
+    padding: 5px 20px
+    line-height: 34px
+    margin-bottom: 15px
+  &-list
+    counter-reset: num
+    span
+      // display: block
+      display: flex
+      align-items: center
+      line-height: 1.6rem
+      +mobile-480
+        +font-20
+      &::before
+        counter-increment: num
+        content: counter(num)
+        background: $primary
+        color: #fff
+        border-radius: 50%
+        text-align: center
+        font-family: Arial
+        line-height: 1.6rem
+        width: 1.6rem
+        margin-right: 10px
+      & + span
+        margin-top: 15px 
+  img
+    max-width: 400px
+// 景點內容
+.each__block
+  margin-bottom: 70px
+  scroll-margin-top: 80px //滑到定點的錯位
+.attractions
+  &-content
+    display: flex
+    +pc-960
+      display: block
+    div + div
+      margin-left: 20px
+      +pc-960
+        margin: 0 auto
+    button
+      margin: 0 auto
+      width: 100%
+      padding-top: 10px
+      max-width: 460px
+      display: block
+      +img-hover
+  &-pic
+    @extend %margin-auto
+    max-width: 600px
+    +pc-960
+      width: 90%
+      margin-bottom: 10px
+  &-text
+    max-width: 660px
+    width: 100%
+    +pc-960
+      margin-bottom: 20px
+    p
+      +font-22
+      +font-bold
+      text-align: justify
+      margin: 20px 0 30px
+      @extend %margin-auto
+      letter-spacing: 0.5px
+      padding: 0 1rem
+      +mobile-480
+        padding: 0
+        +font-18
+    // img
+    //   @extend %margin-auto
+    //   max-width: 600px
+  &-title
+    @extend %margin-auto
+    max-width: 660px
+  &-block
+    max-width: 600px
+    // +mobile-480
+    //   text-align: center
+  &-intro
+    display: inline-block
+    margin-left: 1rem
+    background: url('../images/bg-underline.png') repeat-x left bottom
+    +font-28
+    color: $color-blue
+    padding-bottom: 12px
+    +mobile-480
+      margin-left: 0
+      font-size: 1.2rem
+      padding-bottom: 7px
+.order-revers
+  .attractions-pic
+    order:2
+    margin-left: 20px
+    +pc-1024
+      margin: 0 auto 20px auto
+  div + div
+    margin-left: 0
+#cards
+  position: relative
+  background: #5b5b5b
+  padding-bottom: 80px
+  +mobile-640
+    padding-bottom: 120px
+  +mobile-480
+    padding-bottom: 140px
+
+/*購買GOTOP按鈕*/
+.buybtn
+  position: fixed
+  right: 1%
+  bottom: 1%
+  max-width: 120px
+  z-index: 9999
+  +mobile-640
+    max-width: 80px
+.topbtn
+  // display: none
+  position: fixed
+  right: 3.7%
+  bottom: 9%
+  max-width: 80px
+  z-index: 9999
+  +pc-1024
+    // display: block
+    right: 4%
+.btn-notice
+  @extend %margin-auto
+  max-width: 250px
+  margin-bottom: 50px
+  background:#fff
+  border-radius: 12px
+  text-align: center
+  padding: 1% 2%
+  +font-24
+  +font-bold
+  letter-spacing: 1px
+  color: #d63a0b
+  cursor: pointer
+  +mobile-480
+    margin-bottom: 30px
   &:hover
-    background: $color-grey
+    box-shadow: #d63a0b 6px 6px 1px
+    transform: translate(-5px, -5px)
+#myModal_notice
+  z-index: 10000
+  .modal
+    &-dialog
+      max-width: 750px
+    &-header
+      justify-content: center
+      .btn-close
+        position: absolute
+        right: 2%
+        top: 2%
+        margin: 0
+    &-title
+      +font-24
+      +font-bold
+    &-body
+      padding: 2rem
+.notice
+  &-title
+    +font-32
+    +font-bold
+    text-align: center
+  &-list 
+    padding: 2% 5%
+    li 
+      +font-18
+      margin-bottom: 10px
+      list-style: disc
+      margin-left: 1.3rem
+      text-align: justify
+      a
+        display: inline
+footer
+  background: #deeeec
+  padding: 30px
+  text-align: center
+  span
+    +font-18
+    & + span
+      margin-left: 30px

@@ -16,34 +16,16 @@
 @mixin btn-hover($color)
   &:hover
     background: $color
-
-@mixin border-bottom($color)
-  border-bottom: 1px solid $color
-
-@mixin border-all($color)
-  border: 1px solid $color
-
-@mixin shadow($color)
-  box-shadow: 10px 10px 0px $color
-
-@mixin title($color, $size, $lineH)
-  color: $color
-  font-size: $size
-  line-height: $lineH
-  font-weight: bold
-  text-align: center
-  margin-bottom: 30px
-
 @mixin font-40
   font-size: 2.5rem
   line-height: 3rem
 
-@mixin font-35
-  font-size: 2.185rem
-  line-height: 2.8rem
-
 @mixin font-32
   font-size: 2rem
+  line-height: 2.5rem
+
+@mixin font-30
+  font-size: 1.875rem
   line-height: 2.5rem
 
 @mixin font-28
@@ -70,14 +52,24 @@
   font-size: 1rem
   line-height: 1.2rem
 
-@mixin bold-400
+@mixin font-bold
   font-weight: 400
 
-@mixin bold-500
-  font-weight: 500
+@mixin border-bottom($color)
+  border-bottom: 1px solid $color
 
-@mixin bold-600
-  font-weight: 606
+@mixin border-all($size, $color)
+  border: $size solid $color
+
+@mixin shadow($color)
+  box-shadow: 5px 5px 10px $color
+@mixin title($color, $size, $lineH)
+  color: $color
+  font-size: $size
+  line-height: $lineH
+  font-weight: bold
+  text-align: center
+  margin-bottom: 30px
 
 @mixin pc-1366 
   @media (max-width:1366px)
