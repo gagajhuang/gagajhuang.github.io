@@ -4,7 +4,7 @@
 /* 統一樣式 */
 %margin-auto
   width: 100%
-  margin:0 auto
+  margin: 0 auto
 %block-top
   margin-top: 50px
   +mobile-480
@@ -12,12 +12,13 @@
 html, body
   scroll-behavior: smooth
   color: $text
-
+strong
+  font-weight: 400
 /* 選單 */
 nav
   box-sizing: border-box
   overflow: hidden
-.logo 
+.logo
   a
     max-width: 70px
 .menu
@@ -51,12 +52,12 @@ nav
     &:nth-child(2)
       &::before
         background: $secondary
-    a 
+    a
       position: relative
       color: $text
       +font-22
       font-family: Arial
-      font-weight: 600 
+      font-weight: 600
       &:hover
         color: #fff
         background: $color-grey-dark
@@ -74,7 +75,7 @@ nav
   &-show
     left: 0
     max-width: none
-#menu-btn 
+#menu-btn
   position: absolute
   left: 15px
   top: 15px
@@ -93,7 +94,7 @@ nav
     background: url('../images/bg-content.jpg') no-repeat center/cover fixed
 .section__block
   position: relative
-  max-width: 1224px
+  max-width: 1300px
   margin-left: 250px
   padding: 50px 100px
   +pc-1366
@@ -119,8 +120,8 @@ nav
       left: 10%
     +pc-769
       position: relative
-      left:0
-  &-title 
+      left: 0
+  &-title
     h1
       font-family: Arial
       font-weight: 900
@@ -313,7 +314,7 @@ h3
       background: url(../images/img-time-m.png) no-repeat center
       +font-24
       font-family: Arial
-      font-weight: 800 
+      font-weight: 800
       color: $tertiary
       width: 95px
       height: 50px
@@ -324,7 +325,7 @@ h3
         display: block
   &-item
     position: absolute
-    width: 45%
+    width: 33%
     & + .company-item
       +pc-1024
         margin-top: 50px
@@ -338,28 +339,40 @@ h3
       +pc-1024
         display: none
   &-one
-    top: 80%
+    bottom: 80%
+    left: 0
+    img
+      transform: rotate(180deg)
+      margin-left: 40%
   &-two
-    bottom: 80%
-    left: 7%
-    +pc-1024
-      left: 0
-    img
-      transform: rotate(180deg)
-      margin-left: 60%
-  &-three
+    left: 5%
     top: 80%
-    left: 48%
     +pc-1024
       left: 0
-  &-four
+    img
+      margin-left: 70%
+  &-three
     bottom: 80%
-    left: 55%
+    left: 36%
     +pc-1024
       left: 0
     img
       transform: rotate(180deg)
+      margin-left: 25%
+  &-four
+    top: 80%
+    left: 41%
+    +pc-1024
+      left: 0
+    img
       margin-left: 60%
+  &-five
+    bottom: 80%
+    left: 72%
+    +pc-1024
+      left: 0
+    img
+      transform: rotate(180deg)
   &-text
     border: 2px solid $tertiary
     border-radius: 10px
@@ -383,9 +396,10 @@ h3
       z-index: -1
   &-things
     display: block
-    letter-spacing: 1px
+    letter-spacing: 1.5px
     text-align: justify
     +font-16
+    color: #000
     & + .company-things
       margin-top: 5px
   &-case
@@ -446,14 +460,14 @@ h3
     padding-left: 1rem
     &-project
       &:not(:last-child)
-        margin-bottom: 10px
+        margin-bottom: 20px
       p
-        +font-18
+        +font-20
         +bold-400
         display: flex
         align-items: center
         color: #2c67ae
-        letter-spacing: 1px
+        letter-spacing: 1.2px
         &::before
           display: block
           content: ''
@@ -466,42 +480,49 @@ h3
           content: "\f35d"
           font-size: 13px
           margin-left: 5px
-          padding-top: 2px 
+          padding-top: 2px
       a:hover
         p
           color: $tertiary
       span
         display: block
         margin-left: 13px
-        letter-spacing: 1px
+        letter-spacing: 1.5px
         text-align: justify
         +font-16
+        color: #000
+        margin-top: 5px
         & + span
           margin-top: 5px
       ul
         margin-left: 2.2rem
+        margin-top: 5px
         li
           +font-16
           list-style: circle
-          letter-spacing: 1px
-          // display: flex
-          // align-items: flex-start
-          // &::before
-          //   display: block
-          //   content: ''
-          //   min-width: 8px
-          //   height: 8px
-          //   +border-all($text)
-          //   border-radius: 50%
-          //   margin: 5px 5px 0 0
+          letter-spacing: 1.5px
+          color: #000
           a
             display: inline
           a + a
             &::before
               font: var(--fa-font-solid)
-              content: "\f30b" 
+              content: "\f30b"
               margin: 0 5px
               color: $text
+        .no-step
+          a
+            color: #2c67ae
+            +bold-400
+            &::after
+              font: var(--fa-font-solid)
+              content: "\f35d"
+              font-size: 13px
+              margin-left: 5px
+              padding-top: 2px
+          a + a
+            &::before
+              content: "/"
   &-design
     // max-width: 500px
     padding-left: 1rem

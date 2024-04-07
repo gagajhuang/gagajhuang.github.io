@@ -10,6 +10,10 @@ html, body {
   color: #1b1b1b;
 }
 
+strong {
+  font-weight: 400;
+}
+
 /* 選單 */
 nav {
   box-sizing: border-box;
@@ -120,7 +124,7 @@ nav {
 
 .section__block {
   position: relative;
-  max-width: 1224px;
+  max-width: 1300px;
   margin-left: 250px;
   padding: 50px 100px;
 }
@@ -373,7 +377,7 @@ h2::after {
 }
 .skill-list li::before {
   font: var(--fa-font-solid);
-  content: "";
+  content: "\f35a";
   margin-right: 10px;
 }
 
@@ -411,7 +415,7 @@ h3 {
 }
 h3::after {
   font: var(--fa-font-solid);
-  content: "";
+  content: "\f101";
   font-size: 24px;
   padding-left: 5px;
 }
@@ -465,7 +469,7 @@ h3::after {
 }
 .company-item {
   position: absolute;
-  width: 45%;
+  width: 33%;
 }
 @media (max-width: 1024px) {
   .company-item + .company-item {
@@ -489,11 +493,16 @@ h3::after {
   }
 }
 .company-one {
-  top: 80%;
+  bottom: 80%;
+  left: 0;
+}
+.company-one img {
+  transform: rotate(180deg);
+  margin-left: 40%;
 }
 .company-two {
-  bottom: 80%;
-  left: 7%;
+  left: 5%;
+  top: 80%;
 }
 @media (max-width: 1024px) {
   .company-two {
@@ -501,21 +510,24 @@ h3::after {
   }
 }
 .company-two img {
-  transform: rotate(180deg);
-  margin-left: 60%;
+  margin-left: 70%;
 }
 .company-three {
-  top: 80%;
-  left: 48%;
+  bottom: 80%;
+  left: 36%;
 }
 @media (max-width: 1024px) {
   .company-three {
     left: 0;
   }
 }
+.company-three img {
+  transform: rotate(180deg);
+  margin-left: 25%;
+}
 .company-four {
-  bottom: 80%;
-  left: 55%;
+  top: 80%;
+  left: 41%;
 }
 @media (max-width: 1024px) {
   .company-four {
@@ -523,8 +535,19 @@ h3::after {
   }
 }
 .company-four img {
-  transform: rotate(180deg);
   margin-left: 60%;
+}
+.company-five {
+  bottom: 80%;
+  left: 72%;
+}
+@media (max-width: 1024px) {
+  .company-five {
+    left: 0;
+  }
+}
+.company-five img {
+  transform: rotate(180deg);
 }
 .company-text {
   border: 2px solid #5d677b;
@@ -553,10 +576,11 @@ h3::after {
 }
 .company-things {
   display: block;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   text-align: justify;
   font-size: 1rem;
   line-height: 1.2rem;
+  color: #000;
 }
 .company-things + .company-things {
   margin-top: 5px;
@@ -575,7 +599,7 @@ h3::after {
 }
 .company-case li::before {
   font: var(--fa-font-solid);
-  content: "";
+  content: "\f0a9";
   margin-right: 5px;
 }
 
@@ -636,16 +660,16 @@ h3::after {
   padding-left: 1rem;
 }
 .case-list-project:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .case-list-project p {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: 1.6rem;
   font-weight: 400;
   display: flex;
   align-items: center;
   color: #2c67ae;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
 }
 .case-list-project p::before {
   display: block;
@@ -657,7 +681,7 @@ h3::after {
 }
 .case-list-project p::after {
   font: var(--fa-font-solid);
-  content: "";
+  content: "\f35d";
   font-size: 13px;
   margin-left: 5px;
   padding-top: 2px;
@@ -668,31 +692,49 @@ h3::after {
 .case-list-project span {
   display: block;
   margin-left: 13px;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   text-align: justify;
   font-size: 1rem;
   line-height: 1.2rem;
+  color: #000;
+  margin-top: 5px;
 }
 .case-list-project span + span {
   margin-top: 5px;
 }
 .case-list-project ul {
   margin-left: 2.2rem;
+  margin-top: 5px;
 }
 .case-list-project ul li {
   font-size: 1rem;
   line-height: 1.2rem;
   list-style: circle;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  color: #000;
 }
 .case-list-project ul li a {
   display: inline;
 }
 .case-list-project ul li a + a::before {
   font: var(--fa-font-solid);
-  content: "";
+  content: "\f30b";
   margin: 0 5px;
   color: #1b1b1b;
+}
+.case-list-project ul .no-step a {
+  color: #2c67ae;
+  font-weight: 400;
+}
+.case-list-project ul .no-step a::after {
+  font: var(--fa-font-solid);
+  content: "\f35d";
+  font-size: 13px;
+  margin-left: 5px;
+  padding-top: 2px;
+}
+.case-list-project ul .no-step a + a::before {
+  content: "/";
 }
 .case-design {
   padding-left: 1rem;
@@ -747,6 +789,4 @@ h3::after {
 }
 .no-href p::after {
   content: "";
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
