@@ -717,6 +717,7 @@ h3::after {
 }
 .case-list-project ul li a {
   display: inline;
+  font-weight: 400;
 }
 .case-list-project ul li a + a::before {
   font: var(--fa-font-solid);
