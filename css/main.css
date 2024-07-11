@@ -312,6 +312,8 @@ h2::after {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  align-items: flex-start;
+  gap: 30px;
 }
 @media (max-width: 1024px) {
   .skill-block {
